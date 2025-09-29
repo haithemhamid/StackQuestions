@@ -28,10 +28,11 @@ class PathSimplifier {
         // Your code here:
         // Use a StringBuilder to join the elements in the stack
         // to form the final path string (e.g., "/dir1/dir2").
-        StringBuilder filePath= new StringBuilder("/");
-        while (stack.size()>1)
-            filePath.insert(0,"/"+stack.pop());
-        filePath.insert(filePath.length(),stack.pop());
+        StringBuilder filePath= new StringBuilder();
+        for (String dir : stack) {
+            filePath.append("/").append(dir);
+        }
         return filePath.toString(); // Placeholder
     }
+
 }
